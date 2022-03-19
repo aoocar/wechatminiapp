@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "装逼搞B_黎明岛",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "usingComponents": {
+        "list": "/components/list"
+    }
+}

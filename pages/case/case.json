@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "",
+    "usingComponents": {
+        "date-time-picker": "/components/bory-dateTimePicker/bory-dateTimePicker",
+        "list": "/components/list"
+    }
+}

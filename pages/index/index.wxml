@@ -1,0 +1,41 @@
+<view>
+    <view class="top-msg" wx:if="{{msg}}">点击右上角添加到我的小程序，随时使用<image mode src="/static/icon-t.png"></image>
+    </view>
+    <view class="line" wx:if="{{!msg}}"></view>
+    <view class="search">
+        <view class="form">
+            <view class="input">
+                <input autocomplete="off" autocorrect="off" bindconfirm="__e" bindinput="__e" data-event-opts="{{[ [ 'confirm',[ [ 'search',['$event'] ] ] ],[ 'input',[ [ 'input',['$event'] ] ] ] ]}}" id="search" maxlength="64" name="search" placeholder="大家都在搜：苹果装逼" type="text"></input>
+            </view>
+            <button bindtap="__e" class="ui-btn" data-event-opts="{{[ [ 'tap',[ [ 'search',['$event'] ] ] ] ]}}" data-ui="danger small" id="search-btn" type="submit">搜索</button>
+        </view>
+    </view>
+    <view class="line"></view>
+    <view class="case-hot">
+        <view class="title-b">
+            <text class="i">荐</text>
+            <text class="h1">精选推荐</text>
+        </view>
+        <view class="case-hot-ul">
+            <view class="case-li" style="{{'background: url('+domain+'/resource/Zb/'+item.id+'/icon-big.jpg) no-repeat center/cover;'}}" wx:for="{{hotData}}" wx:for-index="key">
+                <navigator class="case-a" url="{{'/pages/case/case?id='+item.id}}">
+                    <view class="case-img-box2">
+                        <image class="case-img2" src="{{domain+'/resource/Zb/'+item.id+'/icon.jpg'}}"></image>
+                    </view>
+                    <view class="case-title2">{{item.title}}</view>
+                </navigator>
+            </view>
+        </view>
+    </view>
+    <view class="ad-view" wx:if="{{msg}}">
+        <view class="line"></view>
+        <ad adTheme="white" adType="video" unitId="adunit-1431891bcfbcb6fb"></ad>
+    </view>
+    <view class="line"></view>
+    <view class="case-list">
+        <view class="title">
+            <view class="title-item">最新列表</view>
+        </view>
+        <list bind:__l="__l" list="{{newData}}" vueId="8dd740cc-1"></list>
+    </view>
+</view>

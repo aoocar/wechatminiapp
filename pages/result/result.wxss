@@ -1,0 +1,18 @@
+.result {
+    text-align: center;
+    font-size: 24rpx;
+    padding: 20rpx 0;
+}
+
+.result .msg {
+    color: #666;
+}
+
+.result .img {
+    width: 100%;
+    margin-top: 20rpx;
+}
+
+.save {
+    margin-left: 30rpx;
+}

@@ -1,0 +1,8 @@
+<view class="container">
+    <l-clipper bind:__l="__l" bind:cancel="__e" bind:success="__e" data-event-opts="{{[ [ '^success',[ ['success'] ] ],[ '^cancel',[ ['cancel'] ] ] ]}}" h="{{h}}" height="{{cutHeight}}" isLockHeight="{{true}}" isLockWidth="{{true}}" maxRatio="{{6}}" scaleRatio="{{canvasZoom}}" vueId="d1debdb8-1" vueSlots="{{['cancel','photo','rotate','confirm']}}" w="{{w}}" width="{{cutWidth}}" wx:if="{{show}}">
+        <view slot="cancel">取消</view>
+        <view slot="photo">选择图片</view>
+        <view slot="rotate">旋转</view>
+        <view slot="confirm">确定</view>
+    </l-clipper>
+</view>

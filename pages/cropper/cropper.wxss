@@ -1,0 +1,17 @@
+page {
+    overflow: hidden;
+    background: #ddd;
+}
+
+.container,page {
+    height: 100%;
+    position: fixed;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}

@@ -1,0 +1,15 @@
+<view class="case-ul">
+    <block wx:for="{{list}}" wx:for-index="key">
+        <view class="case-li">
+            <navigator class="case-a" hoverClass="on" url="{{'/pages/case/case?id='+item.id}}">
+                <view class="case-img-box">
+                    <image class="case-img" mode="aspectFill" src="{{'http://z.wxysbd.com/resource/Zb/'+item.id+'/icon.jpg'}}"></image>
+                </view>
+                <view class="case-title">{{item.title}}</view>
+            </navigator>
+        </view>
+        <view class="ad-view" wx:if="{{msg&&key%15==14}}">
+            <ad adIntervals="100" unitId="adunit-7cf88e24fdb20026"></ad>
+        </view>
+    </block>
+</view>

@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "图片裁剪",
+    "disableScroll": true,
+    "enablePullDownRefresh": false,
+    "usingComponents": {
+        "l-clipper": "/components/lime-clipper/index",
+        "list": "/components/list"
+    }
+}

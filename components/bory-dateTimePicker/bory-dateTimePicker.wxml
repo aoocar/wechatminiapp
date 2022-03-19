@@ -1,0 +1,36 @@
+<view class="date-time-picker data-v-8d36d06c" wx:if="{{visible}}">
+    <view catchtap="__e" class="date-time-mask data-v-8d36d06c" data-event-opts="{{[ [ 'tap',[ [ 'hide',['$event'] ] ] ] ]}}"></view>
+    <view catchtap="__e" class="date-time-container data-v-8d36d06c" data-event-opts="{{[ [ 'tap',[ [ 'handleEvent',['$event'] ] ] ] ]}}">
+        <view class="time-picker-tool data-v-8d36d06c" wx:if="{{isShowToolBar}}">
+            <view catchtap="__e" class="{{['data-v-8d36d06c',cancelButtonClass]}}" data-event-opts="{{[ [ 'tap',[ [ 'cancel',['$event'] ] ] ] ]}}">
+                <text class="data-v-8d36d06c">{{cancelButtonText}}</text>
+            </view>
+            <view class="{{['data-v-8d36d06c',toolBarTitleClass]}}">
+                <text class="data-v-8d36d06c">{{toolBarTitle}}</text>
+            </view>
+            <view catchtap="__e" class="{{['data-v-8d36d06c',confirmButtonClass]}}" data-event-opts="{{[ [ 'tap',[ [ 'confirm',['$event'] ] ] ] ]}}">
+                <text class="data-v-8d36d06c">{{confirmButtonText}}</text>
+            </view>
+        </view>
+        <picker-view bindchange="__e" class="picker-view data-v-8d36d06c" data-event-opts="{{[ [ 'change',[ [ 'dateTimePickerChange',['$event'] ] ] ] ]}}" indicatorStyle="{{indicatorStyleString}}" value="{{dateTime}}">
+            <picker-view-column class="data-v-8d36d06c" data-id="year" wx:if="{{isShowYear}}">
+                <view class="item data-v-8d36d06c" wx:for="{{years}}" wx:key="index">{{item+'年'}}</view>
+            </picker-view-column>
+            <picker-view-column class="data-v-8d36d06c" data-id="month" wx:if="{{isShowMonth}}">
+                <view class="item data-v-8d36d06c" wx:for="{{months}}" wx:key="index">{{item+'月'}}</view>
+            </picker-view-column>
+            <picker-view-column class="data-v-8d36d06c" data-id="day" wx:if="{{isShowDay}}">
+                <view class="item data-v-8d36d06c" wx:for="{{days}}" wx:key="index">{{item+'日'}}</view>
+            </picker-view-column>
+            <picker-view-column class="data-v-8d36d06c" data-id="hour" wx:if="{{isShowHour}}">
+                <view class="item data-v-8d36d06c" wx:for="{{hours}}" wx:key="index">{{item+'时'}}</view>
+            </picker-view-column>
+            <picker-view-column class="data-v-8d36d06c" data-id="minute" wx:if="{{isShowMinute}}">
+                <view class="item data-v-8d36d06c" wx:for="{{minutes}}" wx:key="index">{{item+'分'}}</view>
+            </picker-view-column>
+            <picker-view-column class="data-v-8d36d06c" data-id="second" wx:if="{{isShowSecond}}">
+                <view class="item data-v-8d36d06c" wx:for="{{seconds}}" wx:key="index">{{item+'秒'}}</view>
+            </picker-view-column>
+        </picker-view>
+    </view>
+</view>

@@ -1,0 +1,17 @@
+<view>
+    <view class="result">
+        <view class="msg">本次生成结果仅供娱乐消遣请勿违规使用</view>
+        <image class="img" mode="widthFix" src="{{img}}"></image>
+    </view>
+    <block wx:if="{{platform!='h5'}}">
+        <view class="line"></view>
+        <view class="btn-box">
+            <button class="item" openType="share">分享朋友</button>
+            <button bindtap="__e" class="item save" data-event-opts="{{[ [ 'tap',[ [ 'save',['$event'] ] ] ] ]}}">保存图片</button>
+        </view>
+    </block>
+    <view class="line"></view>
+    <view class="ad-view">
+        <ad adTheme="white" adType="video" unitId="adunit-1431891bcfbcb6fb"></ad>
+    </view>
+</view>

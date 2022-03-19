@@ -1,0 +1,49 @@
+<view wx:if="{{formData.length>0}}">
+    <view class="result">
+        <image mode="widthFix" src="{{domain+'/resource/Zb/'+id+'/icon-big.jpg'}}"></image>
+    </view>
+    <view class="inputbox">
+        <block wx:for="{{formData}}">
+            <view class="inputitem" wx:if="{{item.type=='input'}}">
+                <view class="msg input">
+                    <image src="../../static/qianbi.png"></image>{{item.label+'：'}}</view>
+                <view class="input-box" wx:if="{{item.is_date!=1}}">
+                    <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ 'input',['$event'] ] ] ] ]}}" data-i="{{index}}" placeholder="{{item.msg}}" type="{{item.input_type}}" value="{{item.value}}"></input>
+                </view>
+                <view class="input-box" wx:else>
+                    <input disabled bindtap="__e" class="input" data-event-opts="{{[ [ 'tap',[ [ 'selectDatePicker',['$0',index],[ [ ['formData','',index,'format'] ] ] ] ] ] ]}}" placeholder="{{item.msg}}" type="{{text}}" value="{{item.value}}"></input>
+                </view>
+            </view>
+            <block wx:else>
+                <view bindtap="__e" class="inputitem" data-event-opts="{{[ [ 'tap',[ [ 'upload',['$event'] ] ] ] ]}}" data-h="{{item.data[1]}}" data-i="{{index}}" data-w="{{item.data[0]}}" wx:if="{{item.type=='img'}}">
+                    <view class="msg input">
+                        <image src="../../static/form-img.png"></image>上传图片：</view>
+                    <view class="input-box">
+                        <image src="{{item.value!=''?item.value:'../../static/add-img.png'}}" style="height:60rpx;width:60rpx;margin-top:10rpx;"></image>
+                    </view>
+                </view>
+                <block wx:else>
+                    <view class="inputitem" wx:if="{{item.type=='select'}}">
+                        <view class="msg select">
+                            <image src="../../static/shouzhi.png"></image>{{item.label+'：'}}</view>
+                        <view class="input-box">
+                            <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ 'input',['$event'] ] ] ] ]}}" data-i="{{index}}" placeholder="自定义内容" type="text" value="" wx:if="{{item.msg[item.selected]=='自定义'}}"></input>
+                            <picker bindchange="__e" data-event-opts="{{[ [ 'change',[ [ 'picker',['$event'] ] ] ] ]}}" data-i="{{index}}" mode="selector" range="{{item.msg}}" wx:else>
+                                <view class="input">{{item.msg[item.selected]}}</view>
+                            </picker>
+                        </view>
+                    </view>
+                </block>
+            </block>
+        </block>
+        <date-time-picker bind:__l="__l" bind:change="__e" class="vue-ref" data-event-opts="{{[ [ '^change',[ ['dateTimeChange'] ] ] ]}}" data-ref="date-time" datestring="{{dateString}}" type="{{type}}" vueId="fde2a280-1"></date-time-picker>
+    </view>
+    <view class="line"></view>
+    <view class="btn-box">
+        <button bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'complete',['$event'] ] ] ] ]}}">确认生成</button>
+    </view>
+    <view class="line"></view>
+    <view class="ad-view">
+        <ad adIntervals="100" unitId="adunit-7cf88e24fdb20026"></ad>
+    </view>
+</view>

@@ -1,0 +1,15 @@
+<view>
+    <view class="line"></view>
+    <view class="search">
+        <view class="form">
+            <view class="input">
+                <input autocomplete="off" autocorrect="off" bindconfirm="__e" bindinput="__e" data-event-opts="{{[ [ 'confirm',[ [ 'init',['$event'] ] ] ],[ 'input',[ [ 'input',['$event'] ] ] ] ]}}" id="search" maxlength="64" name="search" placeholder="大家都在搜：结婚证生成器" type="text" value="{{keyword}}"></input>
+            </view>
+            <button bindtap="__e" class="ui-btn" data-event-opts="{{[ [ 'tap',[ [ 'init',['$event'] ] ] ] ]}}" data-ui="danger small" id="search-btn" type="submit">搜索</button>
+        </view>
+    </view>
+    <view class="line"></view>
+    <view class="case-list">
+        <list bind:__l="__l" list="{{data}}" vueId="50cad900-1"></list>
+    </view>
+</view>

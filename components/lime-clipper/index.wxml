@@ -1,0 +1,30 @@
+<view class="l-clipper data-v-4b4aa6da" disableScroll="{{true}}" style="{{'z-index: '+zIndex}}">
+    <view catchtouchend="__e" catchtouchmove="__e" catchtouchstart="__e" class="l-clipper-mask data-v-4b4aa6da" data-event-opts="{{[ [ 'touchstart',[ [ 'clipTouchStart',['$event'] ] ] ],[ 'touchmove',[ [ 'clipTouchMove',['$event'] ] ] ],[ 'touchend',[ [ 'clipTouchEnd',['$event'] ] ] ] ]}}">
+        <view class="l-clipper__content data-v-4b4aa6da" style="{{clipStyle}}">
+            <view class="l-clipper__edge data-v-4b4aa6da" wx:for="{{[0,0,0,0]}}" wx:key="index"></view>
+        </view>
+    </view>
+    <image binderror="__e" bindload="__e" bindtouchend="__e" bindtouchmove="__e" bindtouchstart="__e" class="l-clipper-image data-v-4b4aa6da" data-event-opts="{{[ [ 'error',[ [ 'imageLoad',['$event'] ] ] ],[ 'load',[ [ 'imageLoad',['$event'] ] ] ],[ 'touchstart',[ [ 'imageTouchStart',['$event'] ] ] ],[ 'touchmove',[ [ 'imageTouchMove',['$event'] ] ] ],[ 'touchend',[ [ 'imageTouchEnd',['$event'] ] ] ] ]}}" mode="widthFix" src="{{image}}" style="{{imageStyle}}" wx:if="{{image}}"></image>
+    <canvas canvasId="l-clipper" class="l-clipper-canvas data-v-4b4aa6da" disableScroll="{{true}}" id="l-clipper" style="{{'width: '+canvasWidth*scaleRatio+'px; height:'+canvasHeight*scaleRatio+'px;'}}"></canvas>
+    <view class="l-clipper-tools data-v-4b4aa6da">
+        <view class="l-clipper-tools__btns data-v-4b4aa6da">
+            <view bindtap="__e" class="data-v-4b4aa6da" data-event-opts="{{[ [ 'tap',[ [ 'cancel',['$event'] ] ] ] ]}}" wx:if="{{isShowCancelBtn}}">
+                <slot name="cancel" wx:if="{{$slots.cancel}}"></slot>
+                <view class="cancel data-v-4b4aa6da" wx:else>取消</view>
+            </view>
+            <view bindtap="__e" class="data-v-4b4aa6da" data-event-opts="{{[ [ 'tap',[ [ 'uploadImage',['$event'] ] ] ] ]}}" wx:if="{{isShowPhotoBtn}}">
+                <slot name="photo" wx:if="{{$slots.photo}}"></slot>
+                <image class="data-v-4b4aa6da" src="{{$root.m0}}" wx:else></image>
+            </view>
+            <view bindtap="__e" class="data-v-4b4aa6da" data-event-opts="{{[ [ 'tap',[ [ 'rotate',['$event'] ] ] ] ]}}" wx:if="{{isShowRotateBtn}}">
+                <slot name="rotate" wx:if="{{$slots.rotate}}"></slot>
+                <image class="data-v-4b4aa6da" data-type="inverse" src="{{$root.m1}}" wx:else></image>
+            </view>
+            <view bindtap="__e" class="data-v-4b4aa6da" data-event-opts="{{[ [ 'tap',[ [ 'confirm',['$event'] ] ] ] ]}}" wx:if="{{isShowConfirmBtn}}">
+                <slot name="confirm" wx:if="{{$slots.confirm}}"></slot>
+                <view class="confirm data-v-4b4aa6da" wx:else>确定</view>
+            </view>
+        </view>
+        <slot></slot>
+    </view>
+</view>
